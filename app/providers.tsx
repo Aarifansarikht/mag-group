@@ -32,7 +32,7 @@ export function Providers({ children }: React.PropsWithChildren) {
   }
 
   return (
-    <NextThemesProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       {showSplash && <SplashScreen />}
       {children}
     </NextThemesProvider>
