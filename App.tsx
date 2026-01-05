@@ -1,14 +1,3 @@
-
-import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { RootNavigator } from './src/navigation/RootNavigator';
-
-const App = () => {
-  return (
-    <SafeAreaProvider>
-      <RootNavigator />
-    </SafeAreaProvider>
-  );
-};
-
-export default App;
+// This file is legacy and not used in Next.js App Router structure.
+// Routing is handled via the 'app/' directory structure.
+export default function App() { return null; }
