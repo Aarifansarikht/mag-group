@@ -30,18 +30,63 @@ import {
   Warehouse
 } from 'lucide-react';
 import Link from 'next/link';
+import HeroSlider from '@/components/ui/HeroSlider';
 
 export default function LandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const drainageGrid = [
-    { title: 'DRAIN OUTLETS', sub: '', icon: Droplets, img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800' },
-    { title: 'RAINWATER OUTLETS', sub: '', icon: CloudRain, img: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=800' },
-    { title: 'PARKING & AREA DRAINS', sub: 'HEAVY LOAD INFRASTRUCTURE', icon: Truck, img: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=800' },
-    { title: 'KITCHEN & ABLUTION', sub: '', icon: Utensils, img: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800' },
-    { title: 'GULLY GRATINGS', sub: '', icon: LayoutGrid, img: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800' },
-    { title: 'MANHOLE COVERS', sub: '', icon: ShieldCheck, img: 'https://images.unsplash.com/photo-1621259182978-f09e5e2ca09a?q=80&w=800' },
-  ];
+ const solutionsGrid = [
+  {
+    title: "DRAINAGE SOLUTIONS",
+    sub: "MANHOLE COVERS & DRAINAGE",
+    icon: Droplets,
+    img: "/images/products/drainage-solutions.jpg",
+  },
+  {
+    title: "CLAY ROOFING PRODUCTS",
+    sub: "NATURAL & GLAZED TILES",
+    icon: Home,
+    img: "/images/products/clay-roofing.jpg",
+  },
+  {
+    title: "SOLAR OUTDOOR LIGHTS",
+    sub: "SMART & SUSTAINABLE",
+    icon: Sun,
+    img: "/images/products/solar-lighting.jpg",
+  },
+  {
+    title: "PREMIUM FLOOR DRAINS",
+    sub: "LINEAR & FLOOR TRAPS",
+    icon: Droplets,
+    img: "/images/products/floor-drains.jpg",
+  },
+  {
+    title: "GARAGE DOORS & SHUTTERS",
+    sub: "AUTOMATED ACCESS",
+    icon: DoorOpen,
+    img: "/images/products/garage-doors.jpg",
+  },
+  {
+    title: "CLADDING & FLOORING",
+    sub: "ARCHITECTURAL SURFACES",
+    icon: Layers,
+    img: "/images/products/cladding-flooring.jpg",
+  },
+  {
+    title: "PIPES, VALVES & FITTINGS",
+    sub: "INDUSTRIAL SYSTEMS",
+    icon: Pipette,
+    img: "/images/products/pipes-valves.jpg",
+  },
+  {
+    title: "PUMICE AGGREGATES",
+    sub: "LIGHT WEIGHT MATERIALS",
+    icon: Mountain,
+    img: "/images/products/pumice-aggregates.jpg",
+  },
+];
+
+
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950 transition-colors">
@@ -49,39 +94,43 @@ export default function LandingPage() {
       <main className="flex-grow pt-20">
         
         {/* CINEMATIC HERO SECTION */}
-        <section className="relative h-[80vh] md:h-[85vh] flex items-center overflow-hidden bg-brand-950">
-          <div className="absolute inset-0 z-0">
-             <img 
-                src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=80&w=2000" 
-                alt="High-Precision Steel Fabrication" 
-                className="w-full h-full object-cover scale-100"
-             />
-             <div className="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/40 to-transparent backdrop-blur-[1px]" />
-          </div>
-          <div className="container mx-auto px-4 sm:px-6 relative z-10">
-            <div className="max-w-4xl text-left">
-              <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-white/5 backdrop-blur-md border border-white/10 mb-6 animate-fade-up">
-                <span className="text-brand-accent font-black text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em]">
-                  مجموعة ماج الدولية • MAG GROUP
-                </span>
-              </div>
-              <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-black text-white uppercase italic leading-[0.9] md:leading-[0.85] mb-8 animate-fade-up delay-100 drop-shadow-2xl">
-                 STRUCTURAL <br/> <span className="text-brand-accent">MASTERY.</span>
-              </h1>
-              <p className="text-stone-300 max-w-xl font-medium text-base md:text-xl mb-10 md:mb-12 animate-fade-up delay-200 leading-relaxed">
-                 Providing the GCC with bespoke drainage accessories, heavy structural steel systems, and world-class building materials since 2004.
-              </p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-5 animate-fade-up delay-300">
+      {/* CINEMATIC HERO SECTION WITH SLIDER */}
+<section className="relative h-[80vh] md:h-[85vh] flex items-center overflow-hidden bg-brand-950">
+  {/* SLIDER BACKGROUND */}
+  <HeroSlider />
+
+  {/* CONTENT */}
+  <div className="container mx-auto px-4 sm:px-6 relative z-10">
+    <div className="max-w-4xl text-left">
+      <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-white/5 backdrop-blur-md border border-white/10 mb-6 animate-fade-up">
+        <span className="text-brand-accent font-black text-[10px] md:text-xs uppercase tracking-[0.4em]">
+          MAG GROUP INTERNATIONAL • GCC
+        </span>
+      </div>
+
+      <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-black text-white uppercase italic leading-[0.9] md:leading-[0.85] mb-8 animate-fade-up delay-100 drop-shadow-2xl">
+        ENGINEERING <br />
+        <span className="text-brand-accent">THE GCC.</span>
+      </h1>
+
+      <p className="text-stone-300 max-w-xl font-medium text-base md:text-xl mb-10 md:mb-12 animate-fade-up delay-200 leading-relaxed">
+        A dual-hub manufacturing and construction solutions group delivering
+        precision-engineered systems for infrastructure, commercial, and
+        industrial developments across the Middle East.
+      </p>
+
+        <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-5 animate-fade-up delay-300">
                  <Link href="/products" className="w-full sm:w-auto">
                     <Button className="w-full sm:w-auto bg-orange-600 hover:bg-orange-700 h-14 md:h-16 px-10 md:px-12 text-white rounded-none shadow-2xl border-none">EXPLORE RANGE</Button>
                  </Link>
                  <Link href="/contact" className="w-full sm:w-auto">
-                    <Button variant="outline" className="w-full sm:w-auto border-white/20 bg-white/5 backdrop-blur-lg text-white hover:bg-white/10 h-14 md:h-16 px-10 md:px-12 rounded-none">TECHNICAL DATA</Button>
+                    <Button variant="outline" className="w-full sm:w-auto border-white/20 bg-white/5 backdrop-blur-lg text-white hover:bg-white/10 h-14 md:h-16 px-10 md:px-12 rounded-none">Contact us</Button>
                  </Link>
               </div>
-            </div>
-          </div>
-        </section>
+         </div>
+      </div>
+      </section>
+
 
         {/* ABOUT US SECTION */}
         <section className="py-16 md:py-24 bg-white dark:bg-brand-950">
@@ -89,7 +138,7 @@ export default function LandingPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
                  <div className="relative order-2 lg:order-1">
                     <div className="absolute -inset-4 bg-brand-accent/5 rounded-full blur-3xl" />
-                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200" className="relative w-full h-[400px] md:h-[550px] object-cover rounded-none shadow-2xl" alt="Industrial Workflow" />
+                    <img src="/images/about.jpg" className="relative w-full h-[400px] md:h-[550px] object-cover rounded-none shadow-2xl" alt="Industrial Workflow" />
                     <div className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 bg-brand-accent/90 backdrop-blur-xl text-white p-8 md:p-12 hidden md:block shadow-3xl border border-white/10">
                         <p className="text-4xl md:text-5xl font-display font-black italic leading-none">20+</p>
                         <p className="text-[10px] font-black uppercase tracking-widest mt-2">Years of Excellence</p>
@@ -124,11 +173,22 @@ export default function LandingPage() {
         <section className="py-16 md:py-24 bg-industrial-50 dark:bg-brand-900 border-y border-industrial-100 dark:border-brand-800">
            <div className="container mx-auto px-4 md:px-6">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-8">
-                 <div className="max-w-2xl">
-                    <span className="text-brand-accent font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">ENGINEERED COMPONENTS</span>
-                    <h2 className="text-5xl md:text-6xl font-display font-black text-brand-950 dark:text-white uppercase italic leading-[1] md:leading-[0.9]">DRAINAGE <br/>SOLUTIONS</h2>
-                    <p className="text-industrial-500 mt-6 font-medium text-sm md:text-base max-w-lg">Precision-manufactured cast iron and stainless steel drainage systems for high-traffic infrastructure.</p>
-                 </div>
+                <div className="max-w-2xl">
+  <span className="text-brand-accent font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">
+    ENGINEERED SOLUTIONS
+  </span>
+
+  <h2 className="text-5xl md:text-6xl font-display font-black text-brand-950 dark:text-white uppercase italic leading-[1] md:leading-[0.9]">
+    BUILDING <br /> SYSTEMS
+  </h2>
+
+  <p className="text-industrial-500 mt-6 font-medium text-sm md:text-base max-w-lg">
+    A comprehensive range of engineered building systems designed to support
+    infrastructure, commercial, residential, and industrial developments across
+    the GCC.
+  </p>
+</div>
+
                  <div className="w-full md:w-auto pb-2">
                     <Link href="/products" className="block w-full">
                       <Button variant="outline" className="w-full md:w-auto border-brand-950 dark:border-white h-12 px-8 text-[10px] font-black uppercase tracking-[0.2em] bg-white/20 backdrop-blur-md">VIEW ALL DATA</Button>
@@ -137,7 +197,7 @@ export default function LandingPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-industrial-200 dark:border-brand-800">
-                 {drainageGrid.map((item, i) => (
+                 {solutionsGrid.map((item, i) => (
                     <div key={i} className="group relative aspect-square overflow-hidden bg-brand-950 border border-industrial-200 dark:border-brand-800">
                        <img 
                           src={item.img} 
@@ -166,43 +226,107 @@ export default function LandingPage() {
         </section>
 
         {/* SERVICES SECTION */}
-        <section className="py-16 md:py-24 bg-white dark:bg-brand-950 relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-accent/5 blur-[120px] -z-10" />
-           <div className="container mx-auto px-4 md:px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
-                 <div className="space-y-8 md:space-y-10">
-                    <span className="text-brand-accent font-black text-xs uppercase tracking-[0.4em] md:tracking-[0.5em] block">FABRICATION HUB • Doha & Dubai</span>
-                    <h2 className="text-4xl md:text-6xl font-display font-black text-brand-950 dark:text-white uppercase italic leading-[1] md:leading-[0.9]">STEEL SOLUTIONS <br/> FOR <span className="text-brand-accent">MEGA PROJECTS</span></h2>
-                    <p className="text-base md:text-lg text-industrial-500 font-medium">Our heavy fabrication workshops handle the region's most complex structural requirements with ISO-certified mastery.</p>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                       {[
-                         { title: "STRUCTURAL STEEL", icon: Construction, desc: "High-rise & stadium frames." },
-                         { title: "LOGISTICS HUBS", icon: Warehouse, desc: "Bespoke warehouse systems." },
-                         { title: "STEEL BRIDGES", icon: Scaling, desc: "Infrastructure engineering." },
-                         { title: "MEZZANINE FLOORS", icon: Layers, desc: "Spatial optimization." }
-                       ].map((s, i) => (
-                          <div key={i} className="flex items-start gap-4 p-5 md:p-6 bg-white/40 dark:bg-brand-900/40 backdrop-blur-md border border-industrial-100/50 dark:border-brand-800/50 shadow-sm hover:shadow-md transition-all group border-l-2 hover:border-l-brand-accent">
-                             <s.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-accent shrink-0" />
-                             <div>
-                                <h5 className="text-[11px] md:text-xs font-black uppercase tracking-widest text-brand-950 dark:text-white mb-1">{s.title}</h5>
-                                <p className="text-[10px] font-bold text-industrial-500 uppercase tracking-tight">{s.desc}</p>
-                             </div>
-                          </div>
-                       ))}
-                    </div>
+       <section className="py-16 md:py-24 bg-white dark:bg-brand-950 relative overflow-hidden">
+  <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-accent/5 blur-[120px] -z-10" />
 
-                    <Link href="/services" className="block sm:inline-block">
-                       <Button className="w-full sm:w-auto h-14 md:h-16 px-10 md:px-12 bg-brand-950 text-white hover:bg-brand-accent transition-colors font-black uppercase tracking-widest border-none shadow-xl">VIEW CAPABILITIES</Button>
-                    </Link>
-                 </div>
-                 <div className="grid grid-cols-2 gap-4 md:gap-6 relative">
-                    <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=800" className="w-full h-64 md:h-80 object-cover shadow-2xl border-2 md:border-4 border-white/10" alt="Fabrication 1" />
-                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800" className="w-full h-64 md:h-80 object-cover mt-8 md:mt-12 shadow-2xl border-2 md:border-4 border-white/10" alt="Fabrication 2" />
-                 </div>
+  <div className="container mx-auto px-4 md:px-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+
+      {/* CONTENT */}
+      <div className="space-y-8 md:space-y-10">
+        <span className="text-brand-accent font-black text-xs uppercase tracking-[0.5em] block">
+          STEEL FABRICATION SERVICES
+        </span>
+
+        <h2 className="text-4xl md:text-6xl font-display font-black text-brand-950 dark:text-white uppercase italic leading-[1] md:leading-[0.9]">
+          ENGINEERED <br />
+          <span className="text-brand-accent">STEEL SOLUTIONS</span>
+        </h2>
+
+        <p className="text-base md:text-lg text-industrial-500 font-medium leading-relaxed max-w-xl">
+          We deliver end-to-end steel fabrication and structural engineering
+          services for infrastructure, industrial, commercial, and high-end
+          residential projects across the GCC. Our in-house facilities ensure
+          precision manufacturing, customization, and compliance with
+          international standards.
+        </p>
+
+        {/* SERVICE GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+          {[
+            {
+              title: "STRUCTURAL STEEL SYSTEMS",
+              desc: "Steel frameworks for buildings, bridges, and stadiums",
+              icon: Construction,
+            },
+            {
+              title: "LIGHTWEIGHT & MEZZANINE STRUCTURES",
+              desc: "Light steel systems, mezzanine floors & suspended platforms",
+              icon: Layers,
+            },
+            {
+              title: "INDUSTRIAL & LOGISTICS FACILITIES",
+              desc: "Warehouses, factories & prefabricated steel buildings",
+              icon: Warehouse,
+            },
+            {
+              title: "RETRACTABLE & SPECIALIZED SYSTEMS",
+              desc: "Retractable glass roofs, transformer doors & energy doors",
+              icon: Globe,
+            },
+            {
+              title: "ACCESS & SHUTTER SYSTEMS",
+              desc: "Steel shutters, rolling systems & automated access solutions",
+              icon: DoorOpen,
+            },
+            {
+              title: "PROTECTIVE & SAFETY STRUCTURES",
+              desc: "Guard rails, handrails & protective steel systems",
+              icon: ShieldCheck,
+            },
+          ].map((s, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-4 p-5 md:p-6 bg-white/50 dark:bg-brand-900/40 backdrop-blur-md border border-industrial-100/50 dark:border-brand-800/50 shadow-sm hover:shadow-md transition-all border-l-2 hover:border-l-brand-accent"
+            >
+              <s.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-accent shrink-0" />
+              <div>
+                <h5 className="text-[11px] md:text-xs font-black uppercase tracking-widest text-brand-950 dark:text-white mb-1">
+                  {s.title}
+                </h5>
+                <p className="text-[10px] font-bold text-industrial-500 uppercase tracking-tight leading-snug">
+                  {s.desc}
+                </p>
               </div>
-           </div>
-        </section>
+            </div>
+          ))}
+        </div>
+
+        <Link href="/services" className="block sm:inline-block pt-4">
+          <Button className="w-full sm:w-auto h-14 md:h-16 px-10 md:px-12 bg-brand-950 text-white hover:bg-brand-accent transition-colors font-black uppercase tracking-widest border-none shadow-xl">
+            VIEW ALL STEEL SERVICES
+          </Button>
+        </Link>
+      </div>
+
+      {/* IMAGES */}
+      <div className="grid grid-cols-2 gap-4 md:gap-6 relative">
+        <img
+          src="/images/services/protective-railings.jpg"
+          className="w-full h-64 md:h-80 object-cover shadow-2xl border-2 md:border-4 border-white/10"
+          alt="Steel Fabrication Facility"
+        />
+        <img
+          src="/images/services/energy-doors.jpg"
+          className="w-full h-64 md:h-80 object-cover mt-8 md:mt-12 shadow-2xl border-2 md:border-4 border-white/10"
+          alt="Structural Steel Works"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
         {/* FAQ SECTION */}
         <section className="py-16 md:py-24 bg-industrial-50/50 dark:bg-brand-900/30 backdrop-blur-md border-y border-industrial-100 dark:border-brand-800">
@@ -242,14 +366,14 @@ export default function LandingPage() {
                  <div className="lg:col-span-5 space-y-8 md:space-y-10">
                     <div>
                        <span className="text-brand-accent font-black text-xs uppercase tracking-[0.5em] mb-4 block">GET IN TOUCH</span>
-                       <h2 className="text-4xl md:text-6xl font-display font-black text-brand-950 dark:text-white uppercase italic leading-[1] md:leading-[0.9]">PARTNER WITH <br/>US TODAY.</h2>
+                       <h2 className="text-4xl md:text-6xl font-display font-black text-brand-950 dark:text-white uppercase italic leading-[1] md:leading-[0.9]">Contact WITH <br/>US TODAY.</h2>
                     </div>
                     
                     <div className="space-y-6 md:space-y-8">
                        {[
-                         { icon: Phone, label: "Regional Hotline", val: "+974 4400 0000" },
+                         { icon: Phone, label: "Regional Hotline", val: "+974 3158 6804" },
                          { icon: Mail, label: "Email Enquiries", val: "info@magtrading.com" },
-                         { icon: MapPin, label: "Doha Industrial Hub", val: "Street 38, Qatar" }
+                         { icon: MapPin, label: "Doha Industrial Hub", val: "977 Bait Al Hikma St, Doha, Qatar" }
                        ].map((item, i) => (
                         <div key={i} className="flex gap-4 md:gap-6 items-center group">
                           <div className="bg-industrial-100/50 dark:bg-brand-900/50 backdrop-blur-md p-3 md:p-4 border border-industrial-200/50 dark:border-brand-800/50 group-hover:border-brand-accent transition-colors">
@@ -304,7 +428,7 @@ export default function LandingPage() {
         <section className="py-12 md:py-20 bg-industrial-100/30 dark:bg-brand-900/20 backdrop-blur-md overflow-hidden border-y border-industrial-200 dark:border-brand-800">
            <div className="container mx-auto px-4">
               <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-30 grayscale hover:opacity-100 transition-all">
-                 {['MUFLE', 'GRIDIRON', 'FIRSTPLAST', 'FRANCO', 'FITCO', 'ENEKA'].map((p) => (
+                 {['Hospitality', 'Civil Property', 'Educational', 'Residential', 'Commercial'].map((p) => (
                     <span key={p} className="text-2xl md:text-4xl font-display font-black italic text-brand-950 dark:text-white drop-shadow-sm">{p}</span>
                  ))}
               </div>

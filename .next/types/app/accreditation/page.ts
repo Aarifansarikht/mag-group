@@ -1,4 +1,4 @@
-// File: C:\Users\arifa\Downloads\adfdd\app\accreditation\page.tsx
+// File: C:\Appin\mag-group\app\accreditation\page.tsx
 import * as entry from '../../../../app/accreditation/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -6,31 +6,88 @@ import { Button } from '@/components/ui/Primitives';
 import { Construction, HardHat, Warehouse, Zap, ShieldCheck, ArrowRight, ChevronRight, Scaling, Layers } from 'lucide-react';
 
 const serviceList = [
-  { 
-    title: "Structural Steel", 
-    desc: "Precision engineering for high-rise frames, stadium structures, and bridge systems.",
-    img: "https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=1200",
-    items: ["High-Rise Structures", "Heavy Bridge Girders", "Stadium Canopy Systems"]
+  {
+    title: "Structural Steel Systems",
+    desc: "Engineered steel frameworks for complex and large-scale construction projects.",
+    img: "/images/services/structural-steel.jpg",
+    items: [
+      "High-Rise Building Frames",
+      "Stadium & Arena Structures",
+      "Steel Bridge Systems",
+    ],
   },
-  { 
-    title: "Mezzanine & Flooring", 
-    desc: "Light and heavy industrial mezzanines designed for maximum spatial optimization.",
-    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200",
-    items: ["Steel Platform Systems", "Suspended Office Floors", "Catwalk Systems"]
+  {
+    title: "Light Steel & Mezzanine Systems",
+    desc: "Optimized lightweight steel solutions for efficient space utilization.",
+    img: "/images/services/mezzanine-steel.jpg",
+    items: [
+      "Light Steel Structures",
+      "Steel Mezzanine Floors",
+      "Suspended Steel Flooring",
+    ],
   },
-  { 
-    title: "Logistics Hubs", 
-    desc: "Turnkey structural solutions for cold storage and automated logistics hubs.",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200",
-    items: ["High-Span Warehouse Roofs", "Racking Support", "Energy-Efficient Enclosures"]
+  {
+    title: "Prefabricated & Industrial Buildings",
+    desc: "Factory-engineered steel buildings for fast-track project execution.",
+    img: "/images/services/prefab-buildings.jpg",
+    items: [
+      "Prefabricated Steel Buildings",
+      "Industrial Facilities",
+      "Tarpaulin-Covered Steel Structures",
+    ],
   },
-  { 
-    title: "Specialized Tech", 
-    desc: "Bespoke engineering for retractable glass systems and mission-critical energy doors.",
-    img: "https://images.unsplash.com/photo-1522071823931-0d9273659c2c?q=80&w=1200",
-    items: ["Retractable Glass Roofs", "Safety Doors", "Protective Railings"]
-  }
+  {
+    title: "Logistics & Warehouse Structures",
+    desc: "Heavy-duty steel systems for logistics, storage, and distribution facilities.",
+    img: "/images/services/logistics-warehouse.jpg",
+    items: [
+      "Logistics Warehouses",
+      "High-Span Roof Structures",
+      "Racking Support Systems",
+    ],
+  },
+  {
+    title: "Specialized & Retractable Systems",
+    desc: "Custom-engineered steel solutions for advanced architectural requirements.",
+    img: "/images/services/retractable-systems.jpg",
+    items: [
+      "Retractable Glass Roof Systems",
+      "Special Purpose Steel Structures",
+      "Architectural Steel Elements",
+    ],
+  },
+  {
+    title: "Energy, Utility & Access Systems",
+    desc: "Steel systems designed for safety, durability, and operational efficiency.",
+    img: "/images/services/energy-doors.jpg",
+    items: [
+      "Steel Transformer Doors",
+      "Energy-Efficient Steel Doors",
+      "Access & Service Openings",
+    ],
+  },
+  {
+    title: "Shutters, Barriers & Automation",
+    desc: "Automated steel access and security systems for industrial and commercial use.",
+    img: "/images/services/shutters-automation.jpg",
+    items: [
+      "Steel Rolling Shutters",
+      "Automated Shutter Systems",
+      "Gate & Barrier Solutions",
+    ],
+  },
+  {
+    title: "Protective & Safety Structures",
+    desc: "Fabricated steel systems focused on protection, safety, and compliance.",
+    img: "/images/services/protective-railings.jpg",
+    items: [
+      "Protective Steel Railings",
+      "Guardrails & Handrails",
+      "Safety Barrier Systems",
+    ],
+  },
 ];
+
 
 export default function ServicesPage() {
   return (

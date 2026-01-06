@@ -1,4 +1,4 @@
-// File: C:\Users\arifa\Downloads\adfdd\app\contact\page.tsx
+// File: C:\Appin\mag-group\app\contact\page.tsx
 import * as entry from '../../../../app/contact/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
