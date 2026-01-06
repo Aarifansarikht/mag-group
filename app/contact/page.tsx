@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button, Input } from "@/components/ui/Primitives";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -135,104 +136,9 @@ export default function ContactPage() {
 
               {/* RIGHT: FORM */}
               <div className="bg-white dark:bg-brand-900 border p-10 shadow-2xl">
-                <h3 className="text-3xl font-display font-black uppercase italic mb-8">Engineering Enquiry</h3>
+             
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Input
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Full Name"
-                      required
-                      className="h-14 bg-industrial-50"
-                    />
-                    <Input
-                      name="company"
-                      value={form.company}
-                      onChange={handleChange}
-                      placeholder="Company"
-                      className="h-14 bg-industrial-50"
-                    />
-                  </div>
-
-                  <Input
-                    type="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="Email Address"
-                    required
-                    className="h-14 bg-industrial-50"
-                  />
-
-                  <div className="relative">
-                    <select
-                      name="service"
-                      value={form.service}
-                      onChange={handleChange}
-                      className="w-full h-14 bg-industrial-50 border-b-2 px-4 text-xs font-black uppercase focus:border-brand-accent"
-                    >
-                      {/* STEEL FABRICATION */}
-                      <option>Structural Steel Fabrication</option>
-                      <option>Lightweight Steel Structures</option>
-                      <option>Steel Mezzanine Floors</option>
-                      <option>Prefabricated Steel Buildings</option>
-                      <option>Industrial & Logistics Warehouses</option>
-                      <option>Steel Bridges & Infrastructure</option>
-                      <option>Retractable Glass Roof Systems</option>
-                      <option>Steel Transformer & Energy Doors</option>
-                      <option>Steel Shutters & Automation</option>
-                      <option>Protective Steel Railings</option>
-
-                      {/* DRAINAGE SOLUTIONS */}
-                      <option>Drainage Systems & Manhole Covers</option>
-                      <option>Channel Drainage Systems</option>
-                      <option>Roof & Parking Drains</option>
-                      <option>Access & Hatch Covers</option>
-                      <option>Grease Interceptors & Oil Separators</option>
-                      <option>PVC Fabricated Drainage Items</option>
-
-                      {/* BUILDING MATERIALS */}
-                      <option>Clay Roofing Products</option>
-                      <option>Cladding & Clay Facade Systems</option>
-                      <option>Extruded Clay Flooring Tiles</option>
-
-                      {/* DOORS & ACCESS SYSTEMS */}
-                      <option>Garage Doors & Rolling Shutters</option>
-                      <option>Automated Gates & Barriers</option>
-
-                      {/* SOLAR & ENERGY */}
-                      <option>Solar Outdoor Lighting Systems</option>
-
-                      {/* INDUSTRIAL PIPING */}
-                      <option>Pipes, Valves & Fittings</option>
-
-                      {/* AGGREGATES */}
-                      <option>Pumice & Lightweight Aggregates</option>
-
-                      {/* GENERAL */}
-                      <option>Custom Manufacturing Requirement</option>
-                      <option>Technical Consultation / RFQ</option>
-                      <option>Other Enquiry</option>
-                    </select>
-                  </div>
-
-                  <textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="Project details / BOQ / drawings info..."
-                    className="w-full h-40 bg-industrial-50 border-b-2 p-4 resize-none"
-                  />
-
-                  <Button
-                    type="submit"
-                    className="w-full h-16 bg-brand-950 text-white font-black uppercase tracking-widest hover:bg-brand-accent transition"
-                  >
-                    Submit Enquiry
-                  </Button>
-                </form>
+                <ContactForm variant="light"/>
               </div>
             </div>
           </div>
