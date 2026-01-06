@@ -400,15 +400,59 @@ export default function LandingPage() {
                           <label className="text-[10px] font-black text-stone-500 uppercase tracking-widest">COMPANY</label>
                           <Input className="bg-white/5 backdrop-blur-md border-white/10 text-white h-12 md:h-14 focus:bg-white/10 placeholder:text-stone-700" placeholder="Construction Co." />
                        </div>
-                       <div className="space-y-2 md:col-span-2">
-                          <label className="text-[10px] font-black text-stone-500 uppercase tracking-widest">PROJECT TYPE</label>
-                          <select className="w-full h-12 md:h-14 bg-white/10 backdrop-blur-md border-b-2 border-white/10 px-4 text-[11px] md:text-xs font-black uppercase text-white focus:outline-none focus:border-brand-accent appearance-none">
-                             <option className="bg-brand-950">Structural Steel Fabrication</option>
-                             <option className="bg-brand-950">Drainage Accessory Supply</option>
-                             <option className="bg-brand-950">Retractable Glass Systems</option>
-                             <option className="bg-brand-950">Other Technical Request</option>
-                          </select>
-                       </div>
+                     <div className="space-y-2 md:col-span-2">
+  <label className="text-[10px] font-black text-stone-500 uppercase tracking-widest">
+    PROJECT TYPE
+  </label>
+
+  <select className="w-full h-12 md:h-14 bg-white/10 backdrop-blur-md border-b-2 border-white/10 px-4 text-[11px] md:text-xs font-black uppercase text-white focus:outline-none focus:border-brand-accent appearance-none">
+    
+    {/* STEEL FABRICATION */}
+    <option className="bg-brand-950">Structural Steel Fabrication</option>
+    <option className="bg-brand-950">Lightweight Steel Structures</option>
+    <option className="bg-brand-950">Steel Mezzanine Floors</option>
+    <option className="bg-brand-950">Prefabricated Steel Buildings</option>
+    <option className="bg-brand-950">Industrial & Logistics Warehouses</option>
+    <option className="bg-brand-950">Steel Bridges & Infrastructure</option>
+    <option className="bg-brand-950">Retractable Glass Roof Systems</option>
+    <option className="bg-brand-950">Steel Transformer & Energy Doors</option>
+    <option className="bg-brand-950">Steel Shutters & Automation</option>
+    <option className="bg-brand-950">Protective Railings & Safety Systems</option>
+
+    {/* DRAINAGE & WATER MANAGEMENT */}
+    <option className="bg-brand-950">Drainage Systems & Manhole Covers</option>
+    <option className="bg-brand-950">Channel Drainage Systems</option>
+    <option className="bg-brand-950">Roof Drains & Parking Drains</option>
+    <option className="bg-brand-950">Access & Hatch Covers</option>
+    <option className="bg-brand-950">Grease Interceptors & Oil Separators</option>
+    <option className="bg-brand-950">PVC Fabricated Drainage Items</option>
+
+    {/* BUILDING MATERIALS */}
+    <option className="bg-brand-950">Clay Roofing Products</option>
+    <option className="bg-brand-950">Cladding & Clay Facade Systems</option>
+    <option className="bg-brand-950">Extruded Clay Flooring Tiles</option>
+
+    {/* DOORS & ACCESS */}
+    <option className="bg-brand-950">Garage Doors & Rolling Shutters</option>
+    <option className="bg-brand-950">Automated Gates & Barriers</option>
+
+    {/* SOLAR & ENERGY */}
+    <option className="bg-brand-950">Solar Outdoor Lighting Systems</option>
+
+    {/* INDUSTRIAL PIPING */}
+    <option className="bg-brand-950">Pipes, Valves & Fittings</option>
+
+    {/* AGGREGATES */}
+    <option className="bg-brand-950">Pumice & Lightweight Aggregates</option>
+
+    {/* GENERAL */}
+    <option className="bg-brand-950">Custom Manufacturing Requirement</option>
+    <option className="bg-brand-950">Technical Consultation / RFQ</option>
+    <option className="bg-brand-950">Other Technical Request</option>
+
+  </select>
+</div>
+
                        <div className="space-y-2 md:col-span-2">
                           <label className="text-[10px] font-black text-stone-500 uppercase tracking-widest">ENQUIRY DETAILS</label>
                           <textarea className="w-full h-28 md:h-32 bg-white/5 backdrop-blur-md border-b-2 border-white/10 p-4 text-sm text-white focus:outline-none focus:border-brand-accent resize-none placeholder:text-stone-600" placeholder="Describe your project requirements..." />
