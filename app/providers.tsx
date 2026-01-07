@@ -11,7 +11,7 @@ export function Providers({ children }: React.PropsWithChildren) {
   useEffect(() => {
     setIsMounted(true);
     // Check session storage to see if user has already seen the splash in this session
-    const hasSeenSplash = sessionStorage.getItem("runraw_splash_seen");
+    const hasSeenSplash = sessionStorage.getItem("mag_splash_seen");
 
     if (hasSeenSplash) {
       setShowSplash(false);
@@ -19,7 +19,7 @@ export function Providers({ children }: React.PropsWithChildren) {
       // Set the flag and remove splash after animation duration (2.5s)
       const timer = setTimeout(() => {
         setShowSplash(false);
-        sessionStorage.setItem("runraw_splash_seen", "true");
+        sessionStorage.setItem("mag_splash_seen", "true");
       }, 2400); // Slightly less than 2.5s to ensure clean cut
 
       return () => clearTimeout(timer);
