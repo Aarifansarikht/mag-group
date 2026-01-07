@@ -1,6 +1,5 @@
-"use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button, Input } from "@/components/ui/Primitives";
@@ -8,33 +7,6 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    company: "",
-    email: "",
-    service: "Drainage Accessories",
-    message: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    console.log("Enquiry Submitted:", form);
-
-    alert("Thank you! Our engineering team will contact you shortly.");
-
-    setForm({
-      name: "",
-      company: "",
-      email: "",
-      service: "Drainage Accessories",
-      message: "",
-    });
-  };
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950 transition-colors">
