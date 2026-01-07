@@ -64,6 +64,17 @@ const serviceList = [
     img: "/images/services/protective-railings.jpg",
     items: ["Protective Steel Railings", "Guardrails & Handrails", "Safety Barrier Systems"],
   },
+  {
+    title: "Villas & Residential Steel Systems",
+    desc: "Modern steel construction solutions for villas and residential developments with high durability and design flexibility.",
+    img: "/images/services/steel-villas.jpg",
+    items: [
+      "Steel Villas Construction",
+      "Residential Steel Framing Systems",
+      "Luxury Villa Steel Structures",
+      "Custom Steel Housing Solutions"
+    ],
+  },
 ];
 
 export default function ServicesPage() {

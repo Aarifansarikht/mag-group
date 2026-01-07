@@ -1993,9 +1993,6 @@ video {
 .tracking-widest {
   letter-spacing: 0.1em;
 }
-.tracking-\[0\.25em\] {
-  letter-spacing: 0.25em;
-}
 .text-brand-950 {
   --tw-text-opacity: 1;
   color: rgb(0 0 8 / var(--tw-text-opacity, 1));
