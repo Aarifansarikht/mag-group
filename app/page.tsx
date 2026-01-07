@@ -40,48 +40,70 @@ export default function LandingPage() {
       sub: "MANHOLE COVERS & DRAINAGE",
       icon: Droplets,
       img: "/images/products/drainage-solutions.jpg",
+      href: "/products#drainage",
+      active: true,
     },
     {
       title: "CLAY ROOFING PRODUCTS",
       sub: "NATURAL & GLAZED TILES",
       icon: Home,
       img: "/images/products/clay-roofing.jpg",
+      active: true,
+      href: "/products#clay-roofing",
     },
     {
       title: "SOLAR OUTDOOR LIGHTS",
       sub: "SMART & SUSTAINABLE",
       icon: Sun,
       img: "/images/products/solar-lighting.jpg",
+      href: "/products#drainage",
+
+      active: false,
     },
     {
       title: "PREMIUM FLOOR DRAINS",
       sub: "LINEAR & FLOOR TRAPS",
       icon: Droplets,
       img: "/images/products/floor-drains.jpg",
+      href: "/products#drainage",
+
+      active: false,
     },
     {
       title: "GARAGE DOORS & SHUTTERS",
       sub: "AUTOMATED ACCESS",
       icon: DoorOpen,
       img: "/images/products/garage-doors.jpg",
+      href: "/products#drainage",
+
+      active: false,
     },
     {
       title: "CLADDING & FLOORING",
       sub: "ARCHITECTURAL SURFACES",
       icon: Layers,
       img: "/images/products/cladding-flooring.jpg",
+      href: "/products#drainage",
+
+      active: false,
     },
     {
       title: "PIPES, VALVES & FITTINGS",
       sub: "INDUSTRIAL SYSTEMS",
       icon: Pipette,
       img: "/images/products/pipes-valves.jpg",
+      href: "/products#drainage",
+
+      active: false,
     },
     {
       title: "PUMICE AGGREGATES",
       sub: "LIGHT WEIGHT MATERIALS",
       icon: Mountain,
       img: "/images/products/pumice-aggregates.jpg",
+      href: "/products#drainage",
+
+      active: false,
     },
   ];
 
@@ -89,9 +111,8 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950 transition-colors">
       <Header />
       <main className="flex-grow pt-20">
-        {/* CINEMATIC HERO SECTION */}
         {/* CINEMATIC HERO SECTION WITH SLIDER */}
-        <section className="relative h-[80vh] md:h-[85vh] flex items-center overflow-hidden bg-brand-950">
+        <section className="relative h-[80vh] md:h-[90vh] flex items-center overflow-hidden bg-brand-950">
           {/* SLIDER BACKGROUND */}
           <HeroSlider />
 
@@ -216,35 +237,92 @@ export default function LandingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-industrial-200 dark:border-brand-800">
-              {solutionsGrid.map((item, i) => (
-                <div
-                  key={i}
-                  className="group relative aspect-square overflow-hidden bg-brand-950 border border-industrial-200 dark:border-brand-800"
-                >
-                  <img
-                    src={item.img}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-40"
-                    alt={item.title}
-                  />
-                  <div className="absolute inset-0 bg-brand-950/20 backdrop-blur-none group-hover:backdrop-blur-[2px] transition-all duration-500" />
+              {solutionsGrid.map((item, i) => {
+                const isActive = item.active;
 
-                  <div className="absolute top-6 left-6 md:top-8 md:left-8">
-                    <div className="bg-brand-accent/90 backdrop-blur-md p-2.5 md:p-3 skew-x-[-10deg] border border-white/20 shadow-lg">
-                      <item.icon className="w-4 h-4 md:w-5 md:h-5 text-white skew-x-[10deg]" />
+                return (
+                  <Link
+                    key={i}
+                    className={`
+                                group relative aspect-square overflow-hidden border 
+                                ${
+                                  isActive
+                                    ? "bg-brand-950 cursor-pointer"
+                                    : "bg-gray-900 opacity-50 grayscale pointer-events-none"
+                                }
+                                border-industrial-200 dark:border-brand-800
+                                transition-all duration-500
+                              `}
+                    href={item.href}
+                  >
+                    <img
+                      src={item.img}
+                      className={`
+                                w-full h-full object-cover transition-all duration-700
+                                ${isActive ? "group-hover:scale-105 opacity-95" : "opacity-40 grayscale"}
+                              `}
+                      alt={item.title}
+                    />
+
+                    {/* Overlay */}
+                    <div
+                      className={`
+          absolute inset-0 transition-all duration-500
+          ${isActive ? "bg-brand-950/20 group-hover:backdrop-blur-[2px]" : "bg-black/10"}
+        `}
+                    />
+
+                    {/* Icon */}
+                    <div className="absolute top-6 left-6 md:top-8 md:left-8">
+                      <div
+                        className={`
+            backdrop-blur-md p-2.5 md:p-3 skew-x-[-10deg] border shadow-lg
+            ${isActive ? "bg-brand-accent/90 border-white/20" : "bg-gray-600/70 border-gray-500"}
+          `}
+                      >
+                        <item.icon
+                          className={`
+              w-4 h-4 md:w-5 md:h-5 skew-x-[10deg]
+              ${isActive ? "text-white" : "text-gray-300"}
+            `}
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-left z-10">
-                    <h4 className="text-xl md:text-2xl font-display font-black text-white uppercase italic leading-none drop-shadow-lg">
-                      {item.title}
-                    </h4>
-                    {item.sub && (
-                      <p className="text-[10px] font-black text-brand-accent uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        {item.sub}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))}
+
+                    {/* Text */}
+                    <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-left z-10">
+                      <h4
+                        className={`
+            text-xl md:text-2xl font-display font-black uppercase italic leading-none drop-shadow-lg
+            ${isActive ? "text-white" : "text-gray-400"}
+          `}
+                      >
+                        {item.title}
+                      </h4>
+
+                      {item.sub && (
+                        <p
+                          className={`
+              text-[10px] font-black uppercase tracking-widest mt-2 transition-opacity
+              ${isActive ? "text-brand-accent opacity-0 group-hover:opacity-100" : "text-gray-500 opacity-100"}
+            `}
+                        >
+                          {item.sub}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Disabled Badge */}
+                    {/* {!isActive && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="bg-black/60 text-gray-300 text-[10px] px-3 py-1 uppercase tracking-widest">
+                          Coming Soon
+                        </span>
+                      </div>
+                    )} */}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
