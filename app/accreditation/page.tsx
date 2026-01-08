@@ -88,8 +88,7 @@ export default function AccreditationPage() {
                 </ul>
               </div>
 
-          
-               <div className="relative w-full h-64 md:h-80 overflow-hidden shadow-2xl">
+              <div className="relative w-full h-64 md:h-80 overflow-hidden shadow-2xl">
                 <Image
                   src="/images/inspection.jpg"
                   alt="Industrial Quality Testing & Inspection"

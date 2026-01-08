@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Button, Input } from "@/components/ui/Primitives";
 
@@ -20,11 +19,7 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
 
   const isLight = variant === "light";
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -51,27 +46,18 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
   return (
     <>
       {/* GLOW (ONLY FOR DARK) */}
-      {!isLight && (
-        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 blur-[100px] -z-10" />
-      )}
+      {!isLight && <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 blur-[100px] -z-10" />}
 
       <h3
-        className={`text-2xl md:text-3xl font-display font-black uppercase italic mb-8 md:mb-10 leading-none ${
-         "dark:text-white drop-shadow-md"
-        }`}
+        className={`text-2xl md:text-3xl font-display font-black uppercase italic mb-8 md:mb-10 leading-none ${"dark:text-white drop-shadow-md"}`}
       >
         Engineering Request
       </h3>
 
-      <form
-        onSubmit={handleSubmit}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
-      >
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {/* FULL NAME */}
         <div className="space-y-2">
-          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">
-            FULL NAME
-          </label>
+          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">FULL NAME</label>
           <Input
             name="name"
             value={form.name}
@@ -88,9 +74,7 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
 
         {/* COMPANY */}
         <div className="space-y-2">
-          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">
-            COMPANY
-          </label>
+          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">COMPANY</label>
           <Input
             name="company"
             value={form.company}
@@ -106,9 +90,7 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
 
         {/* PROJECT TYPE */}
         <div className="space-y-2 md:col-span-2">
-          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">
-            PROJECT TYPE
-          </label>
+          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">PROJECT TYPE</label>
           <select
             name="service"
             value={form.service}
@@ -135,9 +117,7 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
 
         {/* MESSAGE */}
         <div className="space-y-2 md:col-span-2">
-          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">
-            ENQUIRY DETAILS
-          </label>
+          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">ENQUIRY DETAILS</label>
           <textarea
             name="message"
             value={form.message}

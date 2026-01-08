@@ -8,7 +8,6 @@ export default function AboutSection() {
     <section className="py-16 md:py-24 bg-white dark:bg-brand-950">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
-          
           {/* IMAGE */}
           <div className="relative order-2 lg:order-1">
             <div className="absolute -inset-4 bg-brand-accent/5 rounded-full blur-3xl" />
@@ -27,12 +26,8 @@ export default function AboutSection() {
 
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 bg-brand-accent/90 backdrop-blur-xl text-white p-8 md:p-12 hidden md:block shadow-3xl border border-white/10">
-              <p className="text-4xl md:text-5xl font-display font-black italic leading-none">
-                20+
-              </p>
-              <p className="text-[10px] font-black uppercase tracking-widest mt-2">
-                Years of Excellence
-              </p>
+              <p className="text-4xl md:text-5xl font-display font-black italic leading-none">20+</p>
+              <p className="text-[10px] font-black uppercase tracking-widest mt-2">Years of Excellence</p>
             </div>
           </div>
 
@@ -50,14 +45,14 @@ export default function AboutSection() {
             </div>
 
             <p className="text-base md:text-lg text-industrial-600 dark:text-stone-400 leading-relaxed font-medium">
-              MAG Group International stands as the dual-hub powerhouse in the Middle East,
-              operating state-of-the-art fabrication facilities in both Doha and Dubai.
+              MAG Group International stands as the dual-hub powerhouse in the Middle East, operating state-of-the-art
+              fabrication facilities in both Doha and Dubai.
             </p>
 
             <div className="p-5 md:p-6 bg-industrial-50 dark:bg-brand-900/50 backdrop-blur-md border border-industrial-100 dark:border-brand-800">
               <p className="text-sm md:text-base text-industrial-500 font-medium italic">
-                "Our mission is to provide architects and engineers with reliable,
-                high-specification drainage hardware and structural steel components that exceed international safety benchmarks."
+                "Our mission is to provide architects and engineers with reliable, high-specification drainage hardware
+                and structural steel components that exceed international safety benchmarks."
               </p>
             </div>
 
@@ -72,7 +67,6 @@ export default function AboutSection() {
               </Link>
             </div>
           </div>
-
         </div>
       </div>
     </section>

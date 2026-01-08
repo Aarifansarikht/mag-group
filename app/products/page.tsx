@@ -1,9 +1,6 @@
 import React from "react";
 import Products from "./Products";
 
-/* ---------------------------------------------
-   SERVICES DATA
----------------------------------------------- */
 const serviceList = [
   {
     title: "Structural Steel Systems",
@@ -69,9 +66,7 @@ const serviceList = [
 export default function Page() {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950">
-    
       <Products serviceList={serviceList} />
-      
     </div>
   );
 }

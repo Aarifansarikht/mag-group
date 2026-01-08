@@ -1,11 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/Primitives";
-import {
-  Construction,
-  HardHat,
-  ChevronRight,
-  Scaling,
-} from "lucide-react";
+import { Construction, HardHat, ChevronRight, Scaling } from "lucide-react";
 import Link from "next/link";
 
 const serviceList = [
@@ -65,7 +60,7 @@ const serviceList = [
       "Steel Villas Construction",
       "Residential Steel Framing Systems",
       "Luxury Villa Steel Structures",
-      "Custom Steel Housing Solutions"
+      "Custom Steel Housing Solutions",
     ],
   },
 ];
@@ -73,15 +68,10 @@ const serviceList = [
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950 transition-colors">
-   
       <main className="flex-grow pt-20">
         <section className="bg-brand-950 text-white py-20 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0 opacity-20">
-            <img
-              src="/images/about.jpg"
-              className="w-full h-full object-cover"
-              alt="Services Background"
-            />
+            <img src="/images/about.jpg" className="w-full h-full object-cover" alt="Services Background" />
           </div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <span className="text-brand-accent font-black text-[10px] md:text-xs uppercase tracking-[0.4em] md:tracking-[0.5em] mb-4 block italic">
@@ -170,7 +160,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
- 
     </div>
   );
 }

@@ -14,28 +14,21 @@ export default function LandingPage() {
       <main className="flex-grow pt-20">
         {/* HERO SECTION WITH SLIDER */}
         <HeroSection />
-
         {/* ABOUT US SECTION */}
         <AboutSection />
-
         {/* DRAINAGE SOLUTIONS GRID */}
         <SolutionsSection />
-
         {/* SERVICES SECTION */}
         <ServicesSection />
         {/* USP / DIFFERENTIATOR SECTION */}
         <USPSection />
-
         {/* FAQ SECTION */}
         <FAQSection />
-
         {/* CONTACT US FORM SECTION */}
         <ContactSection />
-
         {/* STRATEGIC PARTNERS SLIDER */}
         <PartnersSection />
       </main>
-     
     </div>
   );
 }

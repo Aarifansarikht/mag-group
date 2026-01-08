@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/Primitives";
 import HeroSlider from "@/components/ui/HeroSlider";

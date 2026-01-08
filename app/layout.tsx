@@ -118,14 +118,11 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${inter.variable} ${chakra.variable} font-sans antialiased bg-white text-brand-950 dark:bg-brand-950 dark:text-industrial-100`}
       >
-
         <Providers>
-        <Header />
-          
+          <Header />
           {children}
-          
-        <Footer />
-          </Providers>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

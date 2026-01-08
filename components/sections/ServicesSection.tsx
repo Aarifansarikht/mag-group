@@ -10,7 +10,6 @@ export default function ServicesSection() {
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
-
           {/* CONTENT */}
           <div className="space-y-8 md:space-y-10">
             <span className="text-brand-accent font-black text-xs uppercase tracking-[0.5em] block">
@@ -24,8 +23,8 @@ export default function ServicesSection() {
 
             <p className="text-base md:text-lg text-industrial-500 font-medium leading-relaxed max-w-xl">
               We deliver end-to-end steel fabrication and structural engineering services for infrastructure,
-              industrial, commercial, and high-end residential projects across the GCC. Our in-house facilities
-              ensure precision manufacturing, customization, and compliance with international standards.
+              industrial, commercial, and high-end residential projects across the GCC. Our in-house facilities ensure
+              precision manufacturing, customization, and compliance with international standards.
             </p>
 
             {/* SERVICE GRID */}
@@ -88,7 +87,6 @@ export default function ServicesSection() {
 
           {/* IMAGES */}
           <div className="grid grid-cols-2 gap-4 md:gap-6 relative">
-            
             {/* Image 1 */}
             <div className="relative w-full h-64 md:h-80 shadow-2xl border-2 md:border-4 border-white/10 overflow-hidden">
               <Image
@@ -111,7 +109,6 @@ export default function ServicesSection() {
                 className="object-cover"
               />
             </div>
-
           </div>
         </div>
       </div>

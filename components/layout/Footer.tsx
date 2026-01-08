@@ -1,20 +1,12 @@
 import React from "react";
-import {
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-  ArrowRight,
-} from "lucide-react";
+import {Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-brand-950 text-industrial-400 py-20 border-t border-brand-800">
       <div className="container mx-auto px-4 md:px-6">
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
-
           {/* BRAND */}
           <div className="space-y-6">
             <div className="flex flex-col">
@@ -27,13 +19,11 @@ export default function Footer() {
             </div>
 
             <p className="text-sm leading-relaxed text-industrial-500 font-medium">
-              MAG Group International is a GCC-based manufacturing and construction
-              solutions company. With operational hubs in Qatar and the UAE, we
-              support complex infrastructure, commercial, and industrial projects
-              through engineering-driven execution, customization, and strict
-              quality control.
+              MAG Group International is a GCC-based manufacturing and construction solutions company. With operational
+              hubs in Qatar and the UAE, we support complex infrastructure, commercial, and industrial projects through
+              engineering-driven execution, customization, and strict quality control.
             </p>
-{/* 
+            {/* 
             <div className="flex gap-4">
               <a
                 href="#"
@@ -47,9 +37,7 @@ export default function Footer() {
 
           {/* QATAR */}
           <div>
-            <h4 className="text-white font-black uppercase tracking-widest mb-6 text-xs italic">
-              QATAR HEADQUARTERS
-            </h4>
+            <h4 className="text-white font-black uppercase tracking-widest mb-6 text-xs italic">QATAR HEADQUARTERS</h4>
 
             <ul className="space-y-5 text-xs font-bold uppercase tracking-widest">
               <li>
@@ -69,10 +57,7 @@ export default function Footer() {
               </li>
 
               <li>
-                <a
-                  href="tel:+974 3158 6804"
-                  className="flex items-center gap-3 hover:text-brand-accent transition"
-                >
+                <a href="tel:+974 3158 6804" className="flex items-center gap-3 hover:text-brand-accent transition">
                   <Phone className="h-4 w-4 text-brand-accent" />
                   +974 3158 6804
                 </a>
@@ -92,9 +77,7 @@ export default function Footer() {
 
           {/* UAE */}
           <div>
-            <h4 className="text-white font-black uppercase tracking-widest mb-6 text-xs italic">
-              UAE OPERATIONS
-            </h4>
+            <h4 className="text-white font-black uppercase tracking-widest mb-6 text-xs italic">UAE OPERATIONS</h4>
 
             <ul className="space-y-5 text-xs font-bold uppercase tracking-widest">
               <li>
@@ -114,10 +97,7 @@ export default function Footer() {
               </li>
 
               <li>
-                <a
-                  href="tel:+97140000000"
-                  className="flex items-center gap-3 hover:text-brand-accent transition"
-                >
+                <a href="tel:+97140000000" className="flex items-center gap-3 hover:text-brand-accent transition">
                   <Phone className="h-4 w-4 text-brand-accent" />
                   +971 4 000 0000
                 </a>
@@ -137,46 +117,32 @@ export default function Footer() {
 
           {/* CAPABILITIES */}
           <div>
-            <h4 className="text-white font-black uppercase tracking-widest mb-6 text-xs italic">
-              CAPABILITIES
-            </h4>
+            <h4 className="text-white font-black uppercase tracking-widest mb-6 text-xs italic">CAPABILITIES</h4>
 
             <ul className="space-y-4 text-xs font-bold uppercase tracking-widest">
               <li>
-                <Link
-                  href="/about"
-                  className="hover:text-brand-accent transition flex items-center gap-2"
-                >
+                <Link href="/about" className="hover:text-brand-accent transition flex items-center gap-2">
                   <ArrowRight className="w-3 h-3" />
                   In-House Manufacturing
                 </Link>
               </li>
 
               <li>
-                <Link
-                  href="/about"
-                  className="hover:text-brand-accent transition flex items-center gap-2"
-                >
+                <Link href="/about" className="hover:text-brand-accent transition flex items-center gap-2">
                   <ArrowRight className="w-3 h-3" />
                   Engineering & Customization
                 </Link>
               </li>
 
               <li>
-                <Link
-                  href="/about"
-                  className="hover:text-brand-accent transition flex items-center gap-2"
-                >
+                <Link href="/about" className="hover:text-brand-accent transition flex items-center gap-2">
                   <ArrowRight className="w-3 h-3" />
                   Quality & Compliance Control
                 </Link>
               </li>
 
               <li>
-                <Link
-                  href="/about"
-                  className="hover:text-brand-accent transition flex items-center gap-2"
-                >
+                <Link href="/about" className="hover:text-brand-accent transition flex items-center gap-2">
                   <ArrowRight className="w-3 h-3" />
                   GCC Project Execution
                 </Link>
@@ -201,7 +167,6 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-
       </div>
     </footer>
   );

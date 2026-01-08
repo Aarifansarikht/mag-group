@@ -7,7 +7,7 @@ export default function AboutPage() {
       <main className="flex-grow pt-20">
         {/* HERO */}
         <section className="relative h-[50vh] md:h-[60vh] flex items-center bg-brand-950">
-           <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0">
             <Image
               src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=1200"
               alt="About Hero"
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
               {/* RIGHT IMAGES */}
               <div className="grid grid-cols-2 gap-4">
-                  <div className="relative w-full h-64 md:h-80 shadow-2xl overflow-hidden">
+                <div className="relative w-full h-64 md:h-80 shadow-2xl overflow-hidden">
                   <Image
                     src="/images/about.jpg"
                     alt="Manufacturing Facility"

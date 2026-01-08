@@ -12,7 +12,6 @@ export default function USPSection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
-
           {/* LEFT CONTENT */}
           <div className="space-y-8">
             <span className="text-brand-accent font-black text-xs uppercase tracking-[0.5em] block">
@@ -25,9 +24,9 @@ export default function USPSection() {
             </h2>
 
             <p className="text-stone-300 text-base md:text-lg font-medium leading-relaxed max-w-xl">
-              MAG Group is not just a trading company — we are a full-scale manufacturer with in-house
-              engineering, fabrication, and customization capabilities. This gives our clients unmatched
-              flexibility, faster delivery timelines, and total quality control from concept to execution.
+              MAG Group is not just a trading company — we are a full-scale manufacturer with in-house engineering,
+              fabrication, and customization capabilities. This gives our clients unmatched flexibility, faster delivery
+              timelines, and total quality control from concept to execution.
             </p>
 
             {/* USP POINTS */}
@@ -60,12 +59,8 @@ export default function USPSection() {
                 >
                   <item.icon className="w-5 h-5 text-brand-accent shrink-0 mt-1" />
                   <div>
-                    <h5 className="text-[11px] font-black uppercase tracking-widest text-white mb-1">
-                      {item.title}
-                    </h5>
-                    <p className="text-[11px] text-stone-400 leading-snug font-medium">
-                      {item.desc}
-                    </p>
+                    <h5 className="text-[11px] font-black uppercase tracking-widest text-white mb-1">{item.title}</h5>
+                    <p className="text-[11px] text-stone-400 leading-snug font-medium">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -98,15 +93,10 @@ export default function USPSection() {
 
             {/* Floating Badge */}
             <div className="absolute bottom-6 right-6 bg-brand-accent text-white px-6 py-5 shadow-xl backdrop-blur-xl border border-white/20">
-              <p className="text-3xl font-display font-black italic leading-none">
-                100%
-              </p>
-              <p className="text-[10px] font-black uppercase tracking-widest mt-1">
-                In-House Manufacturing
-              </p>
+              <p className="text-3xl font-display font-black italic leading-none">100%</p>
+              <p className="text-[10px] font-black uppercase tracking-widest mt-1">In-House Manufacturing</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>

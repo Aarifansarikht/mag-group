@@ -86,8 +86,8 @@ export default function SolutionsSection() {
             </h2>
 
             <p className="text-industrial-500 mt-6 font-medium text-sm md:text-base max-w-lg">
-              A comprehensive range of engineered building systems designed to support infrastructure,
-              commercial, residential, and industrial developments across the GCC.
+              A comprehensive range of engineered building systems designed to support infrastructure, commercial,
+              residential, and industrial developments across the GCC.
             </p>
           </div>
 
@@ -114,11 +114,7 @@ export default function SolutionsSection() {
                 href={item.href}
                 className={`
                   group relative aspect-square overflow-hidden border 
-                  ${
-                    isActive
-                      ? "bg-brand-950 cursor-pointer"
-                      : "bg-gray-900 opacity-50 grayscale pointer-events-none"
-                  }
+                  ${isActive ? "bg-brand-950 cursor-pointer" : "bg-gray-900 opacity-50 grayscale pointer-events-none"}
                   border-industrial-200 dark:border-brand-800
                   transition-all duration-500
                 `}
@@ -179,9 +175,7 @@ export default function SolutionsSection() {
                       className={`
                         text-[10px] font-black uppercase tracking-widest mt-2 transition-opacity
                         ${
-                          isActive
-                            ? "text-brand-accent opacity-0 group-hover:opacity-100"
-                            : "text-gray-500 opacity-100"
+                          isActive ? "text-brand-accent opacity-0 group-hover:opacity-100" : "text-gray-500 opacity-100"
                         }
                       `}
                     >

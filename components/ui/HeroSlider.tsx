@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
@@ -22,7 +21,7 @@ function HeroSlider() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -94,9 +93,7 @@ function HeroSlider() {
             key={i}
             onClick={() => setActive(i)}
             className={`h-1 rounded-full transition-all duration-500 ease-out ${
-              active === i
-                ? "w-12 bg-brand-accent"
-                : "w-4 bg-industrial-200 hover:bg-industrial-300"
+              active === i ? "w-12 bg-brand-accent" : "w-4 bg-industrial-200 hover:bg-industrial-300"
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />
