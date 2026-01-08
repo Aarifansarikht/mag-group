@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Button, Input } from "@/components/ui/Primitives";
 
@@ -9,6 +10,7 @@ type ContactFormProps = {
 const initialState = {
   name: "",
   company: "",
+  email: "",
   service: "Structural Steel Fabrication",
   message: "",
 };
@@ -23,24 +25,31 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    const recipient = "sales@maggroupinternational.com"; // change if needed
+
+    const subject = encodeURIComponent(`New Engineering RFQ - ${form.service}`);
+
+    const body = encodeURIComponent(`
+        Full Name: ${form.name}
+        Company: ${form.company}
+        Email: ${form.email}
+        Service: ${form.service}
+
+        Message:
+        ${form.message}
+          `);
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
+
+    // Open Gmail in new tab with prefilled content
+    window.open(gmailUrl, "_blank");
 
     setLoading(false);
-
-    if (res.ok) {
-      alert("Thank you! Our engineering team will contact you shortly.");
-      setForm(initialState);
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
+    setForm(initialState);
   };
 
   return (
@@ -49,7 +58,9 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
       {!isLight && <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 blur-[100px] -z-10" />}
 
       <h3
-        className={`text-2xl md:text-3xl font-display font-black uppercase italic mb-8 md:mb-10 leading-none ${"dark:text-white drop-shadow-md"}`}
+        className={`text-2xl md:text-3xl font-display font-black uppercase italic mb-8 md:mb-10 leading-none ${
+          isLight ? "dark:text-white drop-shadow-md" : "text-white drop-shadow-md"
+        }`}
       >
         Engineering Request
       </h3>
@@ -66,8 +77,8 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
             required
             className={`h-12 md:h-14 ${
               isLight
-                ? "bg-industrial-50 border-industrial-200 text-brand-950 focus:border-brand-accent"
-                : "bg-white/5 border-white/10 text-white placeholder:text-stone-600 focus:bg-white/10"
+                ? "bg-industrial-50 border-industrial-200 dark:text-white text-brand-950 focus:border-brand-accent"
+                : "bg-white/5 border-white/10  placeholder:text-stone-600 focus:bg-white/10"
             }`}
           />
         </div>
@@ -82,8 +93,22 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
             placeholder="Construction Co."
             className={`h-12 md:h-14 ${
               isLight
-                ? "bg-industrial-50 border-industrial-200 text-brand-950 focus:border-brand-accent"
-                : "bg-white/5 border-white/10 text-white placeholder:text-stone-600 focus:bg-white/10"
+                ? "bg-industrial-50 border-industrial-200 dark:text-white text-brand-950 focus:border-brand-accent"
+                : "bg-white/5 border-white/10  placeholder:text-stone-600 focus:bg-white/10"
+            }`}
+          />
+        </div>
+        <div className="space-y-2 col-span-2">
+          <label className="text-[10px] font-black uppercase tracking-widest text-stone-500">Email</label>
+          <Input
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="xyz@gmail.com"
+            className={`h-12 md:h-14 ${
+              isLight
+                ? "bg-industrial-50 border-industrial-200 dark:text-white text-brand-950 focus:border-brand-accent"
+                : "bg-white/5 border-white/10  placeholder:text-stone-600 focus:bg-white/10"
             }`}
           />
         </div>
@@ -97,21 +122,21 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
             onChange={handleChange}
             className={`w-full h-12 md:h-14 border-b-2 px-4 text-xs font-black uppercase focus:outline-none ${
               isLight
-                ? "bg-industrial-50 border-industrial-200 text-brand-950 focus:border-brand-accent"
+                ? "bg-industrial-50 border-industrial-200 text-brand-950 focus:border-brand-accent dark:bg-white/10 dark:border-white/10 dark:text-white dark:focus:border-brand-accent"
                 : "bg-white/10 border-white/10 text-white focus:border-brand-accent"
             }`}
           >
-            <option>Structural Steel Fabrication</option>
-            <option>Lightweight Steel Structures</option>
-            <option>Steel Mezzanine Floors</option>
-            <option>Prefabricated Steel Buildings</option>
-            <option>Industrial & Logistics Warehouses</option>
-            <option>Steel Bridges & Infrastructure</option>
-            <option>Drainage Systems & Manhole Covers</option>
-            <option>Solar Outdoor Lighting Systems</option>
-            <option>Custom Manufacturing Requirement</option>
-            <option>Technical Consultation / RFQ</option>
-            <option>Other Technical Request</option>
+            <option className="text-brand-950">Structural Steel Fabrication</option>
+            <option className="text-brand-950">Lightweight Steel Structures</option>
+            <option className="text-brand-950">Steel Mezzanine Floors</option>
+            <option className="text-brand-950">Prefabricated Steel Buildings</option>
+            <option className="text-brand-950">Industrial & Logistics Warehouses</option>
+            <option className="text-brand-950">Steel Bridges & Infrastructure</option>
+            <option className="text-brand-950">Drainage Systems & Manhole Covers</option>
+            <option className="text-brand-950">Solar Outdoor Lighting Systems</option>
+            <option className="text-brand-950">Custom Manufacturing Requirement</option>
+            <option className="text-brand-950">Technical Consultation / RFQ</option>
+            <option className="text-brand-950">Other Technical Request</option>
           </select>
         </div>
 
@@ -125,7 +150,7 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
             placeholder="Describe your project requirements..."
             className={`w-full h-28 md:h-32 border-b-2 p-4 resize-none focus:outline-none ${
               isLight
-                ? "bg-industrial-50 border-industrial-200 text-brand-950 focus:border-brand-accent"
+                ? "bg-industrial-50 border-industrial-200 text-brand-950 focus:border-brand-accent dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-stone-600 dark:focus:border-brand-accent"
                 : "bg-white/5 border-white/10 text-white placeholder:text-stone-600 focus:border-brand-accent"
             }`}
           />
