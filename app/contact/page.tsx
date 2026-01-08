@@ -117,9 +117,9 @@ export default function ContactPage() {
         </section>
 
         {/* MAPS */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-black">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-display font-black uppercase italic text-center mb-10">Our Locations</h2>
+            <h2 className="text-3xl font-display font-black uppercase italic text-center mb-10 ">Our Locations</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <iframe

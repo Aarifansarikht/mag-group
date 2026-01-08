@@ -57,7 +57,7 @@ export default function ContactForm({ variant = "dark" }: ContactFormProps) {
 
       <h3
         className={`text-2xl md:text-3xl font-display font-black uppercase italic mb-8 md:mb-10 leading-none ${
-          isLight ? "text-brand-950" : "text-white drop-shadow-md"
+          "dark:text-white drop-shadow-md"
         }`}
       >
         Engineering Request
