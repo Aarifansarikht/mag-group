@@ -1,17 +1,11 @@
-
 import React from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import { Button, Input } from "@/components/ui/Primitives";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
-
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950 transition-colors">
-      <Header />
-
       <main className="flex-grow pt-20">
         {/* HERO */}
         <section className="bg-brand-950 text-white py-20 relative overflow-hidden">
@@ -108,9 +102,7 @@ export default function ContactPage() {
 
               {/* RIGHT: FORM */}
               <div className="bg-white dark:bg-brand-900 border p-10 shadow-2xl">
-             
-
-                <ContactForm variant="light"/>
+                <ContactForm variant="light" />
               </div>
             </div>
           </div>
@@ -137,8 +129,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

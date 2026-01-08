@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 function HeroSlider() {
   const slides = [
@@ -21,10 +22,10 @@ function HeroSlider() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [active]);
+  }, []);
 
   const nextSlide = () => {
     setActive((prev) => (prev + 1) % slides.length);
@@ -47,7 +48,6 @@ function HeroSlider() {
 
     const diff = startX.current - clientX;
 
-    // swipe threshold
     if (diff > 60) nextSlide();
     if (diff < -60) prevSlide();
 
@@ -66,36 +66,42 @@ function HeroSlider() {
     >
       {/* SLIDES */}
       {slides.map((img, i) => (
-        <img
+        <div
           key={i}
-          src={img}
-          alt="Hero Slide"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             active === i ? "opacity-100" : "opacity-0"
           }`}
-          draggable={false}
-        />
+        >
+          <Image
+            src={img}
+            alt={`Hero Slide ${i + 1}`}
+            fill
+            priority={i === 0}
+            sizes="100vw"
+            className="object-cover"
+            draggable={false}
+          />
+        </div>
       ))}
 
       {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/60 to-transparent pointer-events-none" />
 
-     {/* SLIDER INDICATOR BARS */}
-<div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-  {slides.map((_, i) => (
-    <button
-      key={i}
-      onClick={() => setActive(i)}
-      className={`h-1 rounded-full transition-all duration-500 ease-out ${
-        active === i
-          ? "w-12 bg-brand-accent"
-          : "w-4 bg-industrial-200 hover:bg-industrial-300"
-      }`}
-      aria-label={`Go to slide ${i + 1}`}
-    />
-  ))}
-</div>
-
+      {/* SLIDER INDICATOR BARS */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`h-1 rounded-full transition-all duration-500 ease-out ${
+              active === i
+                ? "w-12 bg-brand-accent"
+                : "w-4 bg-industrial-200 hover:bg-industrial-300"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

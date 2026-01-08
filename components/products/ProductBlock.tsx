@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-
+import Image from "next/image";
 const ProductBlock = ({ title, desc, items, icons, reverse = false }: any) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeItem = items[activeIndex];
@@ -30,12 +30,15 @@ const ProductBlock = ({ title, desc, items, icons, reverse = false }: any) => {
 
         <p className="text-sm text-industrial-500 font-medium mb-6 leading-relaxed">{desc}</p>
 
-        {/* IMAGE */}
         <div className="relative w-full h-40 md:h-80 overflow-hidden mb-6 border border-white/20 shadow-lg">
-          <img
+          <Image
+            key={activeItem.img}
             src={activeItem.img || "/images/placeholder.jpg"}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
             alt={activeItem.title}
+            fill
+            sizes="(min-width: 1024px) 33vw, 100vw"
+            priority
+            className="object-cover transition-opacity duration-700"
           />
         </div>
 

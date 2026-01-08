@@ -1,8 +1,4 @@
-
 import React from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-
 import Products from "./Products";
 
 /* ---------------------------------------------
@@ -73,9 +69,9 @@ const serviceList = [
 export default function Page() {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950">
-      <Header />
+    
       <Products serviceList={serviceList} />
-      <Footer />
+      
     </div>
   );
 }

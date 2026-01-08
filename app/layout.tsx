@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Inter, Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +24,7 @@ const chakra = Chakra_Petch({
    GLOBAL SEO METADATA
 ========================= */
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.maggroupinternational.com"), // change to your real domain
+  metadataBase: new URL("https://www.maggroupinternational.com"),
 
   title: {
     default: "MAG Group International | Industrial Drainage & Structural Steel Experts",
@@ -75,29 +77,28 @@ export const metadata: Metadata = {
       "Manufacturer of drainage systems and structural steel solutions serving Qatar, UAE & GCC infrastructure projects.",
     images: [
       {
-        url: "/images/og-mag-group.jpg", // put in /public/images
+        url: "/favicon-32x32.png",
         width: 1200,
         height: 630,
         alt: "MAG Group International – Industrial Manufacturing",
       },
     ],
   },
-icons: {
-  icon: [
-    { url: "/favicon.ico" },
-    { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-  ],
-  apple: "/apple-touch-icon.png",
-},
-
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 
   twitter: {
     card: "summary_large_image",
     title: "MAG Group International | Industrial Drainage & Steel Fabrication",
     description:
       "Trusted manufacturer of industrial drainage accessories and structural steel systems across the Middle East.",
-    images: ["/images/og-mag-group.jpg"],
+    images: ["/favicon-32x32.png"],
   },
 
   category: "Industrial Manufacturing",
@@ -112,17 +113,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      dir="ltr"
-      suppressHydrationWarning
-      className="scroll-smooth"
-    >
+    <html lang="en" dir="ltr" suppressHydrationWarning className="scroll-smooth">
       <body
         suppressHydrationWarning
         className={`${inter.variable} ${chakra.variable} font-sans antialiased bg-white text-brand-950 dark:bg-brand-950 dark:text-industrial-100`}
       >
-        <Providers>{children}</Providers>
+
+        <Providers>
+        <Header />
+          
+          {children}
+          
+        <Footer />
+          </Providers>
       </body>
     </html>
   );

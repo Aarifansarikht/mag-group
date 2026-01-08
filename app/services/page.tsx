@@ -1,17 +1,10 @@
 import React from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Primitives";
 import {
   Construction,
   HardHat,
-  Warehouse,
-  Zap,
-  ShieldCheck,
-  ArrowRight,
   ChevronRight,
   Scaling,
-  Layers,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -80,12 +73,12 @@ const serviceList = [
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950 transition-colors">
-      <Header />
+   
       <main className="flex-grow pt-20">
         <section className="bg-brand-950 text-white py-20 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <img
-              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000"
+              src="/images/about.jpg"
               className="w-full h-full object-cover"
               alt="Services Background"
             />
@@ -177,7 +170,7 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
-      <Footer />
+ 
     </div>
   );
 }

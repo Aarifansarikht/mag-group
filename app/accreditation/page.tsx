@@ -1,19 +1,9 @@
 import React from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import {
-  ShieldCheck,
-  Award,
-  CheckCircle2,
-  FileCheck,
-  Layers,
-} from "lucide-react";
-
+import { ShieldCheck, Award, CheckCircle2, FileCheck, Layers } from "lucide-react";
+import Image from "next/image";
 export default function AccreditationPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-brand-950 transition-colors">
-      <Header />
-
       <main className="flex-grow pt-20">
         {/* HERO */}
         <section className="bg-brand-accent text-white py-20 md:py-24">
@@ -22,8 +12,8 @@ export default function AccreditationPage() {
               Quality <br className="sm:hidden" /> Engineered.
             </h1>
             <p className="text-base md:text-xl max-w-2xl mx-auto font-medium opacity-90 px-4">
-              Built on international standards, audited processes, and
-              uncompromising compliance across every product line.
+              Built on international standards, audited processes, and uncompromising compliance across every product
+              line.
             </p>
           </div>
         </section>
@@ -77,10 +67,9 @@ export default function AccreditationPage() {
                 </h2>
 
                 <p className="text-stone-400 font-medium leading-relaxed text-sm md:text-base">
-                  All MAG & DMAG products undergo strict in-house and third-party
-                  verification before delivery. Load performance, corrosion
-                  resistance, and dimensional accuracy are validated to meet or
-                  exceed international project specifications.
+                  All MAG & DMAG products undergo strict in-house and third-party verification before delivery. Load
+                  performance, corrosion resistance, and dimensional accuracy are validated to meet or exceed
+                  international project specifications.
                 </p>
 
                 <ul className="space-y-4 text-[10px] md:text-sm font-bold uppercase tracking-tight">
@@ -99,20 +88,21 @@ export default function AccreditationPage() {
                 </ul>
               </div>
 
-              {/* UPDATED IMAGE */}
-              <div className="overflow-hidden">
-                <img
+          
+               <div className="relative w-full h-64 md:h-80 overflow-hidden shadow-2xl">
+                <Image
                   src="/images/inspection.jpg"
-                  className="w-full h-64 md:h-80 object-cover shadow-2xl"
                   alt="Industrial Quality Testing & Inspection"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }
