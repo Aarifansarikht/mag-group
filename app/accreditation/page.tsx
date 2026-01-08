@@ -90,7 +90,7 @@ export default function AccreditationPage() {
 
               <div className="relative w-full h-64 md:h-80 overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/inspection.jpg"
+                  src="/images/usp-manufacturing.jpg"
                   alt="Industrial Quality Testing & Inspection"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
